@@ -22,10 +22,10 @@
     <div class="row mt-5">
       <div class="col-3">
         <h2 class="h4 mb-4">Filter</h2>
-        <form action="#">
+        <form action="#" id="search-form">
           <div class="mb-3">
             <label for="search" class="form-label">Search</label>
-            <input type="search" class="form-control" id="search" placeholder="Falonchi">
+            <input type="search-input" class="form-control" id="search-input" placeholder="Falonchi">
           </div>
           <div class="mb-3">
             <label class="form-label">Price</label>
@@ -81,57 +81,11 @@
       <section class="col-6">
         <div class="d-flex justify-content-between align-items-baseline">
           <h2 class="h4 mb-4">Parrots list</h2>
-          <p>Count: 2</p>
+          <p id="count-number"></p>
         </div>
 
         <ul class="row list-unstyled g-3 parrots-wrapper">
-          <li class="col-6">
-            <div class="card">
-              <img src="https://media.istockphoto.com/photos/parrot-hyacinth-macaw-picture-id1359443019?b=1&k=20&m=1359443019&s=170667a&w=0&h=dteRZ9bM7sEvBbFE9it1r9O7IxlILXb1UnSoLNEVMAg=" alt="" class="card-img-top">
-              <div class="card-body">
-                <h3 class="card-title">Hyacinth macaw</h3>
-                <p class="card-text fw-bold"><mark>$5000</mark></p>
-                <p class="badge bg-success">184sm x 50sm</p>
 
-                <p class="card-text">12.05.2022</p>
-
-                <ul class="d-flex flex-wrap list-unstyled">
-                  <li class="badge bg-primary me-1 mb-1">Beautiful</li>
-                  <li class="badge bg-primary me-1 mb-1">Tame</li>
-                  <li class="badge bg-primary me-1 mb-1">Can speak</li>
-                </ul>
-
-                <div class="position-absolute top-0 end-0 d-flex">
-                  <!-- Agar isFavorite false bo'ladigan bo'lsa i'ning classi "fa-solid fa-star" bo'lishi kerak. Agar unday bo'lmasa "fa fa-star-o" -->
-                  <button class="btn rounded-0 btn-success"><i class="fa fa-star-o" style="color: yellow; pointer-events: none;"></i></button>
-                  <button class="btn rounded-0 btn-secondary"><i class="fa-solid fa-pen" style="pointer-events: none;"></i></button>
-                  <button class="btn rounded-0 btn-danger"><i class="fa-solid fa-trash" style="pointer-events: none;"></i></button>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="col-6">
-            <div class="card">
-              <img src="https://media.istockphoto.com/photos/amazon-rainforest-parrot-macaw-picture-id1197182594?b=1&k=20&m=1197182594&s=170667a&w=0&h=bBQfSDgofCr_w2DBf79cwQe-JA45i02vCv7Ttx5qcmU=" alt="" class="card-img-top">
-              <div class="card-body">
-                <h3 class="card-title">Qizil Ara</h3>
-                <p class="card-text fw-bold"><mark>$1200</mark></p>
-                <p class="badge bg-success">184sm x 50sm</p>
-
-                <p class="card-text">12.05.2022</p>
-
-                <ul class="d-flex flex-wrap list-unstyled">
-                </ul>
-
-                <div class="position-absolute top-0 end-0 d-flex">
-                  <!-- Agar isFavorite false bo'ladigan bo'lsa i'ning classi "fa-solid fa-star" bo'lishi kerak. Agar unday bo'lmasa "fa fa-star-o" -->
-                  <button class="btn rounded-0 btn-success"><i class="fa-solid fa-star" style="color: yellow; pointer-events: none;"></i></button>
-                  <button class="btn rounded-0 btn-secondary"><i class="fa-solid fa-pen" style="pointer-events: none;"></i></button>
-                  <button class="btn rounded-0 btn-danger"><i class="fa-solid fa-trash" style="pointer-events: none;"></i></button>
-                </div>
-              </div>
-            </div>
-          </li>
         </ul>
       </section>
 
@@ -156,24 +110,24 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form id="add-parrot-form">
             <div class="mb-3">
-              <label for="parrot-title" class="form-label">Title</label>
-              <input type="search" class="form-control" id="parrot-title" placeholder="Kakatu">
+              <label for="title" class="form-label">Title</label>
+              <input type="search" class="form-control" id="title" placeholder="Kakatu">
             </div>
             <div class="mb-3">
-              <label for="parrot-img" class="form-label">Img URL</label>
-              <input type="text" class="form-control" id="parrot-img" placeholder="https://...">
+              <label for="imgLink" class="form-label">Img URL</label>
+              <input type="text" class="form-control" id="imgLink" placeholder="https://...">
             </div>
             <div class="mb-3">
               <label for="price" class="form-label">Price ($)</label>
               <input type="number" class="form-control" id="price" placeholder="1000">
             </div>
             <div class="mb-3">
-              <label for="parrot-date" class="form-label">Birth date</label>
-              <input type="date" class="form-control" id="parrot-date" placeholder="12.02.2022">
+              <label for="addBirthDate" class="form-label">Birth date</label>
+              <input type="date" class="form-control" id="addBirthDate" placeholder="12.02.2022">
             </div>
-            
+
             <div class="mb-3">
               <label class="form-label">Width and Height</label>
               <div class="row">
@@ -190,12 +144,92 @@
               <label for="features" class="form-label">Features ("," bilan ajratib yozing)</label>
               <input type="text" class="form-control" id="features" placeholder="Qo'lga o'rgatilgan,Gapira oladi">
             </div>
-            <button type="submit" class="btn btn-primary d-block w-100 p-2">Filter</button>
+            <button type="submit" class="btn btn-primary d-block w-100 p-2">Add parrot</button>
           </form>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="modal fade" id="edit-parrot-modal" tabindex="-1" aria-labelledby="editParrotModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editParrotTitle">Edit parrot</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="edit-parrot-form">
+            <div class="mb-3">
+              <label for="title" class="form-label">Title</label>
+              <input type="search" class="form-control" id="edit-title" placeholder="Kakatu">
+            </div>
+            <div class="mb-3">
+              <label for="imgLink" class="form-label">Img URL</label>
+              <input type="text" class="form-control" id="edit-imgLink" placeholder="https://...">
+            </div>
+            <div class="mb-3">
+              <label for="price" class="form-label">Price ($)</label>
+              <input type="number" class="form-control" id="edit-price" placeholder="1000">
+            </div>
+            <div class="mb-3">
+              <label for="addBirthDate" class="form-label">Birth date</label>
+              <input type="date" class="form-control" id="edit-addBirthDate" placeholder="12.02.2022">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Width and Height</label>
+              <div class="row">
+                <div class="col-6">
+                  <input type="number" class="form-control" id="edit-parrot_width" min="0" aria-label="Parrot width" placeholder="Parrot width">
+                </div>
+                <div class="col-6">
+                  <input type="number" class="form-control" id="edit-parrot_height" min="0" aria-label="Parrot height" placeholder="Parrot height">
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="features" class="form-label">Features ("," bilan ajratib yozing)</label>
+              <input type="text" class="form-control" id="edit-features" placeholder="Qo'lga o'rgatilgan,Gapira oladi">
+            </div>
+            <button type="submit" class="btn btn-primary d-block w-100 p-2">Edit parrot</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <template id="parrots-template">
+    <li class="col-6">
+      <div class="card">
+        <img src="" alt="" class="card-img-top" id="parrot-img">
+        <div class="card-body">
+          <h3 class="card-title"></h3>
+          <p class="card-text fw-bold">
+            <mark id="parrot-price"></mark>
+          </p>
+          <p class="badge bg-success" id="parrot-sizes"></p>
+
+          <p class="card-text" id="birth-date"></p>
+
+          <ul class="d-flex flex-wrap list-unstyled" id="parrot-features"></ul>
+
+          <div class="position-absolute top-0 end-0 d-flex">
+            <button class="btn rounded-0 btn-success">
+              <i class="" style="color: yellow; pointer-events: none;" id="favorite-button"></i>
+            </button>
+            <button class="btn rounded-0 btn-secondary" data-bs-toggle="modal" data-bs-target="#edit-parrot-modal">
+              <i class="fa-solid fa-pen" style="pointer-events: none;"></i>
+            </button>
+            <button class="btn rounded-0 btn-danger">
+              <i class="fa-solid fa-trash" style="pointer-events: none;"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </li>
+  </template>
 
   <script src="js/bootstrap.bundle.min.js"></script>
 

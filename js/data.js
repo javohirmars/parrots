@@ -1,4 +1,4 @@
-const parrosts = [
+const parrots = [
   {
     id: 1,
     title: "Hyacinth macaw",
@@ -9,7 +9,7 @@ const parrosts = [
       width: 184,
       height: 50
     },
-    isFavorite: false,
+    isFavorite: true,
     features: "Beautiful,Tame,Can speak"
   },
   {
@@ -37,6 +37,19 @@ const parrosts = [
     },
     isFavorite: false,
     features: ""
+  },
+  {
+    id: 4,
+    title: "Hyacinth macaw",
+    img: "https://media.istockphoto.com/photos/parrot-hyacinth-macaw-picture-id1359443019?b=1&k=20&m=1359443019&s=170667a&w=0&h=dteRZ9bM7sEvBbFE9it1r9O7IxlILXb1UnSoLNEVMAg=",
+    price: 5000,
+    birthDate: "2022-01-12",
+    sizes: {
+      width: 184,
+      height: 50
+    },
+    isFavorite: true,
+    features: "Beautiful,Tame,Can speak"
   }
 ]
 
